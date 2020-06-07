@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="watch()">
+    <div class="watch">
+        <div id="clock"></div>
+    </div>
+    <script>
+        function adorn(value) {
+            return value = (value < 10) ? ("0" + value) : value;
+        }
+
+        function watch() {
+            var today = new Date(),
+                hours = today.getHours(),
+                minutes = today.getMinutes(),
+                seconds = today.getSeconds(),
+                meridian = (hours >= 12) ? "PM" : "AM",
+                time = "";
+
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+
+        minutes = adorn(minutes);
+        seconds = adorn(seconds);
+
+
+        time = hours + " : " + minutes + " : " + seconds + " " + meridian;
+
+        var clocks = document.querySelectorAll('#clock');
+        [].forEach.call(clocks, function(clock){
+            clock.innerHTML = time;
+        });
+        var timer = setTimeout(watch, 1000);
+        }
+    </script>
+</body>
+
+</html>

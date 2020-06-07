@@ -1,0 +1,13 @@
+.watch{
+    display: flex;
+    padding: 20px;
+    background-color: #DBFF33;
+    opacity: 60%;
+    max-width: 340px;
+    border-radius: 20px;
+    margin: 100px auto;
+}
+#clock{
+    font-size: 50px;
+    font-family: cursive;
+}
